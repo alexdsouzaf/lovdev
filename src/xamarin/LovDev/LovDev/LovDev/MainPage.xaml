@@ -6,7 +6,7 @@
 
     <ContentPage.Content>
 
-        <StackLayout Padding="10">
+        <StackLayout>
             <swipeCardView:SwipeCardView x:Name="SwipeView1"  
                                         VerticalOptions="FillAndExpand"
                                         SupportedSwipeDirections="Left,Right,Up"                                         
@@ -17,15 +17,14 @@
                             <Frame>
                                 <Grid WidthRequest="200" HeightRequest="400">
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="350"></RowDefinition>
-                                        <RowDefinition Height="50"></RowDefinition>
+                                        <RowDefinition Height="400"></RowDefinition>            
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition></ColumnDefinition>
                                         <ColumnDefinition></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
-                                    <Image Source="{Binding Photo}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"></Image>
-                                    <Label Grid.Row="1" TextColor="Black" FontSize="Large">
+                                    <Image Source="{Binding Photo}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Aspect="Fill"></Image>
+                                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Black" FontSize="Large" VerticalOptions="End">
                                         <Label.FormattedText>
                                             <FormattedString>
                                                 <Span Text="{Binding Name}"/>
@@ -35,7 +34,32 @@
                                             </FormattedString>
                                         </Label.FormattedText>
                                     </Label>
+                                    <Label Text="{Binding About}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Black" FontSize="Medium"/>
                                 </Grid>
+
+                                <!--<Grid WidthRequest="200" HeightRequest="400">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="300"></RowDefinition>
+                                        <RowDefinition Height="50"></RowDefinition>
+                                        <RowDefinition Height="50"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding Photo}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Aspect="Fill"></Image>
+                                    <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Black" FontSize="Large">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding Name}"/>
+                                                <Span Text=" - " />
+                                                <Span Text="{Binding Age}"/>
+                                                <Span Text=" anos"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label Text="{Binding About}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" TextColor="Black" FontSize="Medium"/>-->                   
+                                <!--</Grid>-->
                             </Frame>
                         </StackLayout>
                     </DataTemplate>
